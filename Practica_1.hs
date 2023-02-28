@@ -44,6 +44,9 @@ cuadrado_2 x = x^2
 --Secciones:
 cuadrado_3 :: Num a => a -> a
 cuadrado_3 = (^2)
+--4. Usaremos como cuadrado la primera
+cuadrado :: Integer -> Integer
+cuadrado = cuadrado_1
 
 ----Ejercicio 1.5.
 
