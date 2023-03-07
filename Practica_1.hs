@@ -242,4 +242,5 @@ strmes mes
     | mes == 12 = "diciembre"
 
 strfecnac :: Int -> Int -> Int -> String
-strfecnac d m a = show d  ++ " de " ++ strmes m ++ " de " ++ show a 
+strfecnac d m a = do
+    dia d m a ++ " " ++ show d  ++ " de " ++ strmes m ++ " de " ++ show a 
