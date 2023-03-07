@@ -421,7 +421,6 @@ muestraLinea t =
 
 muestraTablero :: Tablero -> String
 muestraTablero t = 
-    putStr "\ESC[2J" ++
     muestraLinea t [1..3] ++ "\n-+-+-\n" ++
     muestraLinea t [4..6] ++ "\n-+-+-\n" ++
     muestraLinea t [7..9]
