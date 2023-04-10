@@ -12,11 +12,31 @@ buildTree :: Ord a => [a] -> Tree a
 buildTree = foldl' (flip insert) Empty
 
 instance Show a => Show (Tree a) where
-  show Empty = "Empty"
-  show (Node x left right) = "Node " ++ show x ++ " (" ++ show left ++ ") (" ++ show right ++ ")"
+  show Empty = "Vacio"
+  show (Node x left right) = "Nodo " ++ show x ++ " (" ++ show left ++ ") (" ++ show right ++ ")"
 
 main :: IO ()
 main = do
-  let nums = [4, 2, 6, 1, 3, 5, 7]
-      tree = buildTree nums
-  print tree
+  let nums = []
+  input nums
+
+
+input::[String]->IO()
+input xs = do
+  print("Introduce un numero o (n/N) para salir")
+  x <- getLine
+  if x == "n" || x == "N"
+    then do
+      (print (buildTree(convertir(xs))))
+      print("Deseas volver a ejecutar el programa? (s/n)")
+      y <- getLine
+      if y == "s" || y == "S"
+        then do
+          main
+        else do
+          print("Gracias por usar el programa")
+      return()
+    else (input (xs++[x]))
+
+convertir :: [String] -> [Int]
+convertir xr = map read xr 
